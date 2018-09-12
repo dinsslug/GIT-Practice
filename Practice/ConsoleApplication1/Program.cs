@@ -10,12 +10,12 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 100000000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine("TEST STRING " + (i + 1));
             }
-            //Console.WriteLine("계속하려면 아무 키나 누르십시오.");
-            //Console.ReadKey(true);
+            Console.WriteLine("계속하려면 아무 키나 누르십시오.");
+            Console.ReadKey(true);
         }
     }
 }
