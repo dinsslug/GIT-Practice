@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class Test
+    public class ConsoleTest
     {
         public event EventHandler<EventArgs> ConsoleChanged;
         public string ConsoleText;

@@ -5,18 +5,26 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:WpfApplication1"
     mc:Ignorable="d"
-    Title="MainWindow" Height="350" Width="525">
+    Title="Test" Height="350" Width="525" UseLayoutRounding="True">
     <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
         <TextBox x:Name="tb" Text="{Binding Text}" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" />
-        <Grid Grid.Row="1">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-                <Button Content="Execute" Command="{Binding RcExecute}" Margin="0" Width="60" />
-                <Button Content="Cancel" Command="{Binding RcCancel}" Margin="10,0,0,0" Width="60" />
+        <Grid Grid.Column="1" Margin="10,0,0,0" Width="100">
+            <StackPanel VerticalAlignment="Top">
+                <Button Content="Save JSON" Command="{Binding RcSaveJson}" Margin="0" Height="26" />
+                <Button Content="Load JSON" Command="{Binding RcReadJson}" Margin="0,10,0,0" Height="26" />
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom">
+                <Button Content="Execute" Command="{Binding RcExecute}" Margin="0" Height="26" />
+                <Button Content="Cancel" Command="{Binding RcCancel}" Margin="0,10,0,0" Height="26" />
             </StackPanel>
         </Grid>
+        <Canvas Background="White" Grid.ColumnSpan="2">
+            <Polyline Stroke="Black" StrokeThickness="1" Points="0,50 100,50 100,150" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Aliased"/>
+            <Path Stroke="Black" StrokeThickness="1" Data="M0,50 L100,50 L100,150" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Aliased" Canvas.Top="50"/>
+        </Canvas>
     </Grid>
 </Window>

@@ -1,9 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using MathNet.Numerics.Distributions;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApplication1
@@ -20,7 +22,7 @@ namespace ConsoleApplication1
             var fileStream = new FileStream("INPUT", FileMode.Create, FileAccess.Write);
             var bs = new BinaryWriter(fileStream);
 
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            //var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
             
             for (int i = 0; i < nItem; i++)
@@ -83,23 +85,29 @@ namespace ConsoleApplication1
 
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            Write();
-            Read();
-            JsonRead();
-            /*
-=======
->>>>>>> 21530afdf9f358aba027133dc30c0b34a2a89f72
-            for (int i = 0; i < 100000000; i++)
-            {
-                Console.WriteLine("TEST STRING " + (i + 1));
+            for (int i = 0; i < 50; i++) {
+                Thread.Sleep(100);
+
+                if (i > 10) {
+                }
+                if (i > 30) {
+                }
+
+                Console.WriteLine(string.Format("Process Line {0}", i + 1));
             }
-<<<<<<< HEAD
+
+            /*
+            var dist = new LogNormal(0, 1);
+
+            Console.WriteLine(string.Format("{0,12} : {1:0.000E+000}", "Mean", dist.Mean));
+            Console.WriteLine(string.Format("{0,12} : {1:0.000E+000}", "Variance", dist.Variance));
+            Console.WriteLine(string.Format("{0,12} : {1:0.000E+000}", "StdDev", dist.StdDev));
+            Console.WriteLine(string.Format("{0,12} : {1:0.000E+000}", "Skewness", dist.Skewness));
+            Console.WriteLine(string.Format("{0,12} : {1:0.000E+000}", "Ex Kurtosis", 0));
+            Console.WriteLine(string.Format("{0,12} : {1:0.000E+000}", "Entropy", dist.Entropy));
+
+            Console.ReadKey();
             */
-=======
->>>>>>> 21530afdf9f358aba027133dc30c0b34a2a89f72
-            //Console.WriteLine("계속하려면 아무 키나 누르십시오.");
-            //Console.ReadKey(true);
         }
     }
 }
